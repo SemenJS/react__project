@@ -3,21 +3,97 @@ import logo from './logo.svg';
 import './App.css';
 
 import Grid from 'react-bootstrap/lib/Grid';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
 import styled from 'styled-components'
+
+import Header from './components/header'
+import Menu from './components/menu'
+import Main from './components/main'
+
+const url = process.env.PUBLIC_URL + './img/fon.png'
+
+const HeaderWrapper = styled.header`
+  width: 100%;
+  height: 49px;
+  background-color: #242424;
+  opacity: 0.8;
+`
+
+const MenuWrapper = styled.div`
+  heidht: 89px;
+  padding-top: 20px;
+`
+const MainWrapper = styled.main`
+  height: 600px;
+  padding-top: 130px;
+  background: url(${url}) no-repeat;
+  background-size: cover;
+`
 
 class App extends Component {
   render() {
     return (
-      <div className="wrapper">
-          <SayFullName name="Semen" surname="Altunin" link="vk.com" />
-          <SayFullName name="Ivan" surname="Petrichenko" link="vk.com" />
-          <SayFullName name="Elena" surname="Altunina" link="vk.com" />
-      </div>
+      <div className="App">
+      <HeaderWrapper>
+            <Grid>
+              <Header />
+            </Grid>
+      </HeaderWrapper>
+      <MenuWrapper>
+            <Grid>
+              <Menu />
+            </Grid>
+      </MenuWrapper>
+            <MainWrapper>
+              <Grid>
+                <Main />
+              </Grid>
+            </MainWrapper>
+          <Main />
+       </div>
     );
   }
 }
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function Hello() {
 //   let phrase = "World"
@@ -26,13 +102,13 @@ class App extends Component {
 //   )
 // }
 
-function SayFullName(props) {
-  return (
-      <div>
-          <h1> Моё имя {props.name}, фамилия - {props.surname}</h1>
-          <a href="{props.link}">Ссылка на мой профиль</a>
-      </div>
-  )
-}
+// function SayFullName(props) {
+//   return (
+//       <div>
+//           <h1> Моё имя {props.name}, фамилия - {props.surname}</h1>
+//           <a href="{props.link}">Ссылка на мой профиль</a>
+//       </div>
+//   )
+// }
 
-export default App;
+// export default App;
